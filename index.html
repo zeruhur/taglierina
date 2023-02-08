@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cut Up</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>     
+    </head>
+    <body>
+        <main class="container">
+            <header>
+                <h1>Taglierina</h1>
+                <p>Usa il metodo "cut up" su un testo.</p>
+                <p>Il testo viene separato in brevi frasi di 5/6 parole ciascuna.
+                    Le frasi così ottenute sono rimescolate casualmente.
+                    Ne vengono selezionate quindi un massimo di 500 per costruire 100 brani di 5 righe ciascuno.
+                </p>
+                <p>I testi risultanti non hanno un vero senso compiuto, ma è possibile "ricucirli" per dare un senso al brano.
+                   Usa il risultato per trarre ispirazione e suggestioni.
+                </p>
+                <h2>Come funziona</h2>
+                <p>Seleziona un file di testo in formato txt dal tuo computer.
+                    Usa un testo di una lunghezza appropriata come un lungo racconto o un romanzo.
+                    Il file verrà elaborato nell'area di testo sottostante.
+                    Potrai anche scaricare il risultato in formato testo cliccando sul pulsante sotto.
+                </p>
+            </header>
+            <input type="file" id="inputfile" accept="*.txt">
+
+            <div>
+                <textarea id="output" readonly="true" rows="10" cols="100"></textarea>
+            </div>
+            <button type="button" onclick="CreateTextFile();">Crea file di testo</button>
+            <footer>
+                Taglierina è rilasciato sotto licenza MIT.
+            </footer>
+        </main>
+        <script src="cutup.js"></script>
+    </body>
+</html>
