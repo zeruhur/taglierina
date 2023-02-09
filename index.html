@@ -12,8 +12,11 @@
     <body>
         <main class="container">
             <header>
-                <h1>Taglierina</h1>
-                <p>Usa il metodo "cut up" su un testo.</p>
+                <hgroup>
+                    
+                    <h1>Taglierina <img src="icon.png"></h1>
+                    <h2>Usa il metodo "cut up" su un testo.</h2>
+                </hgroup>
                 <p>Il testo viene separato in brevi frasi di 5/6 parole ciascuna.
                     Le frasi così ottenute sono rimescolate casualmente.
                     Ne vengono selezionate quindi un massimo di 500 per costruire 100 brani di 5 righe ciascuno.
@@ -21,19 +24,21 @@
                 <p>I testi risultanti non hanno un vero senso compiuto, ma è possibile "ricucirli" per dare un senso al brano.
                    Usa il risultato per trarre ispirazione e suggestioni.
                 </p>
+                <hgroup>
                 <h2>Come funziona</h2>
                 <p>Seleziona un file di testo in formato txt dal tuo computer.
                     Usa un testo di una lunghezza appropriata come un lungo racconto o un romanzo.
                     Il file verrà elaborato nell'area di testo sottostante.
                     Potrai anche scaricare il risultato in formato testo cliccando sul pulsante sotto.
                 </p>
+                </hgroup>
             </header>
             <input type="file" id="inputfile" accept="*.txt">
 
             <div>
                 <textarea id="output" readonly="true" rows="10" cols="100"></textarea>
             </div>
-            <button type="button" onclick="CreateTextFile();">Crea file di testo</button>
+            <button type="button" onclick="CreateTextFile();">Scarica</button>
             <footer>
                 Il Metodo Cut Up è stato formalizzato per la prima volta da Alex Yari in <a href="https://solorpggamer.itch.io/tilt">Tilt</a>.<br>
                 Taglierina è rilasciato sotto licenza MIT. Copyright (c) 2023 Roberto Bisceglie
