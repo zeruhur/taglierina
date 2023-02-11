@@ -26,25 +26,20 @@ function getMultipleRandom(arr, num) {
   return shuffled.slice(0, num);
 }
 
-document.getElementById("inputfile").addEventListener("change", function () {
-let fr = new FileReader();
-fr.readAsText(this.files[0]);
-fr.onload = function () {
-    let book = fr.result;
-
-    let chunks = book.match(
+function makeCutup(book) {
+  let chunks = book.match(
     new RegExp(String.raw`\S.{1,${chunkSize - 2}}\S(?= |$)`, "g")
-    );
-    shuffle(chunks);
+  );
+  shuffle(chunks);
 
-    let lines = getMultipleRandom(chunks, 500);
+  let lines = getMultipleRandom(chunks, 500);
 
-    let counter = 0;
-    let excerpt = 1;
-    var text = String(excerpt);
-    text = text.concat(". ", "\r\n");
+  let counter = 0;
+  let excerpt = 1;
+  var text = String(excerpt);
+  text = text.concat(". ", "\r\n");
 
-    for (let i = 0; i < lines.length; i++) {
+  for (let i = 0; i < lines.length; i++) {
     text = text.concat(lines[i], "\r\n");
     counter++;
     if (counter == 5) {
@@ -54,13 +49,30 @@ fr.onload = function () {
         }
         counter = 0;
     }
-    }
+  }
+  return text;
+}
 
-    document.getElementById("output").textContent = text;
+document.getElementById("inputfile").addEventListener("change", function () {
+let fr = new FileReader();
+fr.readAsText(this.files[0]);
+fr.onload = function () {
+    let book = fr.result;
 
-};
+    document.getElementById("input").textContent = book;
+
+  }
 });
 
+document.getElementById("input").addEventListener("input", function () {
+
+  let book = document.getElementById("input").value;
+
+  let text = makeCutup(book);
+
+  document.getElementById("output").textContent = text;
+
+});
 
 function CreateTextFile() {
   let cutup = document.getElementById("output").value;
