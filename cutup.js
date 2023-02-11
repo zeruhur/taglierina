@@ -64,6 +64,7 @@ fr.onload = function () {
     let text = makeCutup(book);
 
     output.textContent = text;
+
   }
 });
 
