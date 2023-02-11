@@ -26,21 +26,22 @@
                 </p>
                 <hgroup>
                 <h2>Come funziona</h2>
-                <p>Seleziona un file di testo in formato txt dal tuo computer.
-                    Usa un testo di una lunghezza appropriata come un lungo racconto o un romanzo.
-                    Il file verrà elaborato nell'area di testo sottostante.
-                    Potrai anche scaricare il risultato in formato testo cliccando sul pulsante sotto.
-                </p>
+                <ol>
+                <li>Seleziona un file di testo in formato txt dal tuo computer o incolla il testo nell'area sottostante a sinistra.</li>
+                    <li>Usa un testo di una lunghezza appropriata come un lungo racconto o un romanzo.</li>
+                    <li>Il file verrà elaborato nell'area di testo sottostante a destra.</li>
+                    <li>Potrai anche scaricare il risultato in formato testo cliccando sul pulsante sotto.</li>
+                </ol>
                 </hgroup>
             </header>
 
             <input type="file" id="inputfile" accept="*.txt">
             <div class="grid">
                 <div>
-                    <textarea id="input" rows="10" cols="100"></textarea>
+                    <textarea id="input" rows="10" cols="100"  placeholder="inserisci testo da elaborare qui"></textarea>
                 </div>
                 <div>
-                    <textarea id="output" readonly="true" rows="10" cols="100"></textarea>
+                    <textarea id="output" readonly="true" rows="10" cols="100" placeholder="testo elaborato"></textarea>
                 </div>
                 
             </div>
