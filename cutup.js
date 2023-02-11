@@ -53,29 +53,32 @@ function makeCutup(book) {
   return text;
 }
 
-document.getElementById("inputfile").addEventListener("change", function () {
+inputfile.addEventListener("change", function () {
 let fr = new FileReader();
 fr.readAsText(this.files[0]);
 fr.onload = function () {
     let book = fr.result;
 
-    document.getElementById("input").textContent = book;
+    input.textContent = book;
 
+    let text = makeCutup(book);
+
+    output.textContent = text;
   }
 });
 
-document.getElementById("input").addEventListener("input", function () {
+input.addEventListener("input", function () {
 
   let book = document.getElementById("input").value;
 
   let text = makeCutup(book);
 
-  document.getElementById("output").textContent = text;
+  output.textContent = text;
 
 });
 
 function CreateTextFile() {
-  let cutup = document.getElementById("output").value;
+  let cutup = output.value;
 
   let blob = new Blob([cutup], {
     type: "text/plain;charset=utf-8"
