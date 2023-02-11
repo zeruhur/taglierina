@@ -33,10 +33,16 @@
                 </p>
                 </hgroup>
             </header>
-            <input type="file" id="inputfile" accept="*.txt">
 
-            <div>
-                <textarea id="output" readonly="true" rows="10" cols="100"></textarea>
+            <input type="file" id="inputfile" accept="*.txt">
+            <div class="grid">
+                <div>
+                    <textarea id="input" rows="10" cols="100"></textarea>
+                </div>
+                <div>
+                    <textarea id="output" readonly="true" rows="10" cols="100"></textarea>
+                </div>
+                
             </div>
             <button type="button" onclick="CreateTextFile();">Scarica</button>
             <footer>
